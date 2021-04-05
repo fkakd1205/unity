@@ -8,8 +8,13 @@
 <br />
 
 ## [Game]
+### 1. [3D Cube](./3D_Cube)
+* 3D Cube Object 생성 후 translation, rotation, scale 적용(수치는 내 마음대로)
+<br />
+
+![3D_Cube](https://user-images.githubusercontent.com/35367660/113586651-bad1aa00-9668-11eb-9bf4-dc769af68737.PNG)
 
 <br />
 
 ## 참고자료
-
+* .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
