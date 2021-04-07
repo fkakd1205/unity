@@ -13,7 +13,16 @@
 <br />
 
 ![3D_Cube](https://user-images.githubusercontent.com/35367660/113586651-bad1aa00-9668-11eb-9bf4-dc769af68737.PNG)
+<br />
 
+### 1. [C# Programming](./C%23_Programming)
+* [C# Script](./C%23_Programming/Assets/Test.cs) 작성 후 콘솔 창 확인
+1. Player 클래스를 만들고 Attack(), Damage() 메소드의 결과 출력.
+2. Rectangle 클래스를 만들고 rectangle의 넓이와 둘레를 출력.
+3. Student 클래스를 만들고 멤버변수 score 배열에 차례대로 수학, 과학, 영어, 국어, 음악 점수를 저장. 제니와 지수의 과목 성적과 평균을 출력.
+<br />
+
+![C#_Script](https://user-images.githubusercontent.com/35367660/113848534-8dedd600-97d3-11eb-82aa-359a57e97c3b.PNG)
 <br />
 
 ## 참고자료
