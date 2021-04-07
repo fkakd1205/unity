@@ -15,7 +15,7 @@
 ![3D_Cube](https://user-images.githubusercontent.com/35367660/113586651-bad1aa00-9668-11eb-9bf4-dc769af68737.PNG)
 <br />
 
-### 1. [C# Programming](./C%23_Programming)
+### 2. [C# Programming](./C%23_Programming)
 * [C# Script](./C%23_Programming/Assets/Test.cs) 작성 후 콘솔 창 확인
 1. Player 클래스를 만들고 Attack(), Damage() 메소드의 결과 출력.
 2. Rectangle 클래스를 만들고 rectangle의 넓이와 둘레를 출력.
@@ -24,6 +24,7 @@
 
 ![C#_Script](https://user-images.githubusercontent.com/35367660/113848534-8dedd600-97d3-11eb-82aa-359a57e97c3b.PNG)
 <br />
+
 
 ## 참고자료
 * .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
