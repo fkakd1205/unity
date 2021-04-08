@@ -25,6 +25,12 @@
 ![C#_Script](https://user-images.githubusercontent.com/35367660/113848534-8dedd600-97d3-11eb-82aa-359a57e97c3b.PNG)
 <br />
 
+### 3. [Roulette_Game](./Roulette_Game)
+* [[Roulette]](./Roulette_Game/Roulette) : 왼쪽 마우스를 클릭하면 Roulette이 회전, 시간이 지날수록 서서히 멈춤.
+
+<img src="https://user-images.githubusercontent.com/35367660/114051921-7f351b00-98c8-11eb-998d-159f7f4b00ff.gif" width="500">
+<br />
+
 
 ## 참고자료
 * .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
