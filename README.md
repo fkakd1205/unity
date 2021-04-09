@@ -29,6 +29,13 @@
 * [[Roulette]](./Roulette_Game/Roulette) : 왼쪽 마우스를 클릭하면 Roulette이 회전, 시간이 지날수록 서서히 멈춤.
 
 <img src="https://user-images.githubusercontent.com/35367660/114051921-7f351b00-98c8-11eb-998d-159f7f4b00ff.gif" width="500">
+
+* [[Three Roulettes]](./Roulette_Game/Three_Roulettes)
+1. Left Roulette - 왼쪽 마우스를 클릭하면 회전하다가 정지함. 화살표로 선택된 운수를 출력
+2. Middle Roulette - Left Roulette을 왼쪽으로 60도 회전한 상태로 배치. 왼쪽 마우스 클릭하면 회전하다가, 오른쪽 마우스를 클릭하면 회전 속도 1씩 감소
+3. Right Roulette - Left Roulette을 오른쪽으로 60도 회전한 상태로 배치. 왼쪽 마우스를 클릭하는 동안 계속 회전, 왼쪽 마우스를 클릭 해제하면 서서히 멈춤
+
+<img src="https://user-images.githubusercontent.com/35367660/114121314-1cc03700-9929-11eb-80ce-cdb3ea63d571.gif" width="800">
 <br />
 
 
