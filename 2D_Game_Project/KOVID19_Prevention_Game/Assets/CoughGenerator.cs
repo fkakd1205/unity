@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CoughGenerator : MonoBehaviour
 {
+    const int COUGHSIZE = 3;
     public GameObject coughPrefab;
-    float span = 4.0f;  //4초마다 coughShot1, 2 생성
+    float span = 3.0f;  // 3초마다 기침 생성
     float delta = 0;
 
     void Start()
@@ -13,39 +14,71 @@ public class CoughGenerator : MonoBehaviour
 
     }
 
+    // 랜덤한 프리팹 coughSize개 생성
+    int[] getRandomInt(int coughSize, int min, int max)
+    {
+        int[] randArray = new int[coughSize];
+        bool isSame;
+
+        for (int i = 0; i < coughSize; i++)
+        {
+            while (true)
+            {
+                randArray[i] = Random.Range(min, max) * 2;    // 사람들 얼굴에서 침이 발사되는 것처럼 보이기 위해서 y좌표는 -4, -2, 0, 2, 4가 적당하기 때문에 좌표 변경
+                isSame = false;
+
+                for (int j = 0; j < i; j++)
+                {
+                    if (randArray[j] == randArray[i])
+                    {
+                        isSame = true;
+                        break;
+                    }
+                }
+                if (!isSame) break;
+            }
+        }
+
+        return randArray;
+    }
+
     void Update()
     {
         this.delta += Time.deltaTime;
+
+        // 3.5초마다 기침 발사
         if (this.delta > this.span)
         {
             this.delta = 0;
 
-            // 기침 오브젝트 2개 생성
-            GameObject coughShot1 = Instantiate(coughPrefab) as GameObject; // 왼쪽 사람들이 발사하는 침
-            GameObject coughShot2 = Instantiate(coughPrefab) as GameObject; // 오른쪽 사람들이 발사하는 침
-            coughShot2.transform.Rotate(0, 0, 180); // 기침2는 180도 회전해 오른쪽에서 발사되도록 함
+            // 기침 오브젝트 3개 생성
+            GameObject[] coughShot = new GameObject[COUGHSIZE];
 
-            //Random하게 프리팹 생성
-            int shot1 = Random.Range(-4, 4);
-            int shot2 = Random.Range(-4, 4);
-
-            // 사람들 얼굴에서 침이 발사되는 것처럼 보이기 위해서 y 좌표는 -4, -2, 0, 2, 4 가 적당하기 때문에 좌표변경
-            if (shot1 % 2 != 0)
+            for(int i = 0; i < COUGHSIZE; i++)
             {
-                if (shot1 > 0) shot1++;
-                else shot1--;
+                coughShot[i] = Instantiate(coughPrefab) as GameObject;  // 기침들 생성
             }
 
-            if (shot2 % 2 != 0)
+            int[] shot = getRandomInt(COUGHSIZE, -2, 2);    // 랜덤한 프리팹 COUGHSIZE만큼 생성
+
+            int rightShot = Random.Range(0, 2);    // 몇개의 기침이 오른쪽 사람들에게서 발사될 것인지
+
+            // 세사람이 기침 발사
+            for(int i = 0; i < COUGHSIZE; i++)
             {
-                if (shot2 > 0) shot2++;
-                else shot2--;
+
+                // 180도 회전해 오른쪽에서 발사되는 기침.
+                if (i <= rightShot)
+                {
+                    coughShot[i].transform.Rotate(0, 0, 180);
+                    coughShot[i].transform.position = new Vector3(8.5f, shot[i], 0);    // 기침이 발사되는 위치
+                    continue;
+                }
+
+                coughShot[i].transform.position = new Vector3(-8.5f, shot[i], 0);   // 기침이 발사되는 위치
             }
 
-            coughShot1.transform.position = new Vector3(-8.5f, shot1, 0);   // 왼쪽 사람들 중 한 명이 침 발사
-            coughShot2.transform.position = new Vector3(8.5f, shot2, 0);   // 오른쪽 사람들 중 한 명이 침 발사
-
-            Debug.Log("침 발사!");
+            Debug.Log("에취!");
         }
     }
 }

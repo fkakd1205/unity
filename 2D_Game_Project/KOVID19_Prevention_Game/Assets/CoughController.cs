@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CoughController : MonoBehaviour
 {
-    int coughDirection;
-
     void Start()
     {
 
@@ -13,11 +11,13 @@ public class CoughController : MonoBehaviour
 
     void Update()
     {
-        // 프레임마다 등속으로 기침 이동
-        transform.Translate(0, -0.03f, 0);
+        // 랜덤한 스피드로 기침 발사 
+        float coughSpeed = Random.Range(-0.02f, -0.05f);
+        // 등속으로 이동
+        transform.Translate(0, coughSpeed, 0);
 
-        //
-        if(transform.position.x < -9.0f || transform.position.x > 9.0f)
+        // 기침의 x좌표가 반대편 사람의 x좌표에 닿으면 기침 삭제
+        if (transform.position.x < -9.0f || transform.position.x > 9.0f)
         {
             Destroy(gameObject);
         }
