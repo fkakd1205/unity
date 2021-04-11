@@ -7,8 +7,6 @@ public class ItemGenerator : MonoBehaviour
     public GameObject ItemPrefab;
     float span = 5.0f;  // 5초마다 아이템 생성
     float delta = 0;
-    float destroyTime = 3.0f;   // 아이템 생성 후 3초 후 아이템 사라짐
-    float time = 0;
 
     void Start()
     {

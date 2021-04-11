@@ -12,7 +12,7 @@ public class CoughController : MonoBehaviour
     void Update()
     {
         // 랜덤한 스피드로 기침 발사 
-        float coughSpeed = Random.Range(-0.02f, -0.05f);
+        float coughSpeed = Random.Range(-0.01f, -0.05f);
         // 등속으로 이동
         transform.Translate(0, coughSpeed, 0);
 

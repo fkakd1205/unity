@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CoughGenerator : MonoBehaviour
 {
-    const int COUGHSIZE = 3;
     public GameObject coughPrefab;
     float span = 3.0f;  // 3초마다 기침 생성
     float delta = 0;
@@ -51,20 +50,23 @@ public class CoughGenerator : MonoBehaviour
         {
             this.delta = 0;
 
-            // 기침 오브젝트 3개 생성
-            GameObject[] coughShot = new GameObject[COUGHSIZE];
+            // 기침 개수 3~5 랜덤하게
+            int coughSize = Random.Range(3, 5);
 
-            for(int i = 0; i < COUGHSIZE; i++)
+            // 기침 오브젝트 생성
+            GameObject[] coughShot = new GameObject[coughSize];
+
+            for(int i = 0; i < coughSize; i++)
             {
-                coughShot[i] = Instantiate(coughPrefab) as GameObject;  // 기침들 생성
+                coughShot[i] = Instantiate(coughPrefab) as GameObject;  // 기침 오브젝트 생성
             }
 
-            int[] shot = getRandomInt(COUGHSIZE, -2, 2);    // 랜덤한 프리팹 COUGHSIZE만큼 생성
+            int[] shot = getRandomInt(coughSize, -2, 2);    // 랜덤한 프리팹 coughSize만큼 생성
 
             int rightShot = Random.Range(0, 2);    // 몇개의 기침이 오른쪽 사람들에게서 발사될 것인지
 
             // 세사람이 기침 발사
-            for(int i = 0; i < COUGHSIZE; i++)
+            for(int i = 0; i < coughSize; i++)
             {
 
                 // 180도 회전해 오른쪽에서 발사되는 기침.
