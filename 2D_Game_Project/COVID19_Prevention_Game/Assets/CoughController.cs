@@ -12,7 +12,7 @@ public class CoughController : MonoBehaviour
     void Update()
     {
         // 랜덤한 스피드로 기침 발사 
-        float coughSpeed = Random.Range(-0.01f, -0.05f);
+        float coughSpeed = Random.Range(-0.02f, -0.08f);
         // 등속으로 이동
         transform.Translate(0, coughSpeed, 0);
 
@@ -26,7 +26,12 @@ public class CoughController : MonoBehaviour
     // 기침이 player와 충돌했을 경우 기침 삭제.
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("침 맞음!! 감염도 -10");
+        Debug.Log("침 맞음!! 감염도 -20");
+
+        // 감염도 20 증가
+        GameObject director = GameObject.Find("GameDirector");
+        director.GetComponent<GameDirector>().IncreaseGauge(0.2f);
+
         Destroy(gameObject);
     }
 }

@@ -27,6 +27,11 @@ public class ItemController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("æ∆¿Ã≈€ »πµÊ!! »∏∫π +10");
+
+        // ∞®ø∞µµ 10 ∞®º“
+        GameObject director = GameObject.Find("GameDirector");
+        director.GetComponent<GameDirector>().DecreaseGauge(0.1f);
+
         Destroy(gameObject);
     }
 }
