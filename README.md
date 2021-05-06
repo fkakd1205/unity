@@ -35,9 +35,22 @@
 2. Middle Roulette - Left Roulette을 왼쪽으로 60도 회전한 상태로 배치. 왼쪽 마우스 클릭하면 회전하다가, 오른쪽 마우스를 클릭하면 회전 속도 1씩 감소
 3. Right Roulette - Left Roulette을 오른쪽으로 60도 회전한 상태로 배치. 왼쪽 마우스를 클릭하는 동안 계속 회전, 왼쪽 마우스를 클릭 해제하면 서서히 멈춤
 
-<img src="https://user-images.githubusercontent.com/35367660/114121314-1cc03700-9929-11eb-80ce-cdb3ea63d571.gif" width="800">
+<img src="https://user-images.githubusercontent.com/35367660/114121314-1cc03700-9929-11eb-80ce-cdb3ea63d571.gif" width="500">
 <br />
 
+### 3. [Car_Game](./Car_Game)
+* [[RedCar]](./Car_Game/RedCar) : 마우스 왼쪽버튼을 눌렀다 떼었을 때, 스와이프 x좌표 길이만큼 Red Car를 동작. Red Car와 Flag의 거리 출력.
+
+<img src="https://user-images.githubusercontent.com/35367660/117256287-74e54d00-ae85-11eb-83ce-2c3a8393fbf1.gif" width="500">
+
+* [[Two_Cars]](./Car_Game/Two_Cars)
+1. Red Car - 마우스 왼쪽버튼을 눌렀다 떼었을 때, 스와이프 x좌표 길이만큼 Red Car를 동작.
+2. Green Car - 마우스 오른쪽버튼을 눌렀다 떼었을 때, 스와이프 y좌표 길이만큼 Green Car를 동작.
+3. Red Flag - 마우스 가운데 버튼으로 깃발 회전 토글.
+4. Text UI - 깃발 회전 횟수(360도 회전), Green Car과 Green Flag의 거리, Red Car과 Red Flag의 거리.
+
+<img src="https://user-images.githubusercontent.com/35367660/117256290-757de380-ae85-11eb-9677-e87bb6bcc1fe.gif" width="500">
+<br />
 
 ## 참고자료
 * .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
