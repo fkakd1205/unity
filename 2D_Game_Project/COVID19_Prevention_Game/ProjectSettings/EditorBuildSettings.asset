@@ -5,7 +5,46 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/HomeScene.unity
+    guid: aae1daa480a2c8d4d87ecedf85d4bef7
+  - enabled: 1
+    path: Assets/SelectGameScene.unity
+    guid: dc928ea4e350d134387d33924e70a367
+  - enabled: 1
+    path: Assets/Game1_SubScene.unity
+    guid: 84e2e8ae3ca76fb4a848f7d4e33f973e
+  - enabled: 1
+    path: Assets/Game1_Stage1Scene.unity
+    guid: e823f03a9fba48e42b8ba3406485688c
+  - enabled: 1
+    path: Assets/Game1_Stage2Scene.unity
+    guid: 27d5fd613bbb51f46afe55f3cee0327d
+  - enabled: 1
+    path: Assets/Game1_OverScene.unity
+    guid: 929a3755bc16588428d80566c0416419
+  - enabled: 1
+    path: Assets/Game1_ClearScene.unity
+    guid: e73d0389471516a4c8faeb1587d993f9
+  - enabled: 1
+    path: Assets/Game2_Scene.unity
+    guid: 29af75baea75ebd4f8f9533dd00a6b85
+  - enabled: 1
+    path: Assets/Game2_ClearScene.unity
+    guid: a091c6439096fba4191bdcdb1f4482bc
+  - enabled: 1
+    path: Assets/Game2_OverScene.unity
+    guid: c7bf46f8271ac624c80dd884a4888496
+  - enabled: 1
+    path: Assets/Game3_Scene.unity
+    guid: 44cba7a80cf5ec24c824e233b957e261
+  - enabled: 1
+    path: Assets/Game3_ClearScene.unity
+    guid: dc25b94a3453c9b429ce54b936a73cc5
+  - enabled: 1
+    path: Assets/Game3_OverScene.unity
+    guid: 003a864d5e473684cbb0eaf1e20d81bf
   m_configObjects: {}

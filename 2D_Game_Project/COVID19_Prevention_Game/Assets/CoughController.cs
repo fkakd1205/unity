@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game1 - Stage1, Stage2의 기침 Controller
 public class CoughController : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
+    private float coughSpeed;
 
     void Update()
     {
         // 랜덤한 스피드로 기침 발사 
-        float coughSpeed = Random.Range(-0.02f, -0.08f);
+        coughSpeed = Random.Range(-0.02f, -0.1f);
+
         // 등속으로 이동
         transform.Translate(0, coughSpeed, 0);
 
@@ -23,15 +22,18 @@ public class CoughController : MonoBehaviour
         }
     }
 
-    // 기침이 player와 충돌했을 경우 기침 삭제.
+    // 기침이 player와 충돌했을 경우
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("침 맞음!! 감염도 -20");
+        //Debug.Log("침 맞음!! 감염도 +30");
 
-        // 감염도 20 증가
+        // Player 화난 소리
+        GameObject.Find("player_angry").GetComponent<AudioSource>().Play();
+
+        // 감염도 30 증가
         GameObject director = GameObject.Find("GameDirector");
-        director.GetComponent<GameDirector>().IncreaseGauge(0.2f);
+        director.GetComponent<GameDirector>().IncreaseGauge(0.3f);
 
-        Destroy(gameObject);
+        Destroy(gameObject);    // 기침 삭제
     }
 }

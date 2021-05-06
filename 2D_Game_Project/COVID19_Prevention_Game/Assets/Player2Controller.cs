@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Game1 - Stage2 플레이어 Controller
 public class Player2Controller : MonoBehaviour
 {
-    float movePos = 1.625f;    //player는 얼만큼 움직이는지
-
-    void Start()
-    {
-    }
+    private float movePos = 1.625f;    //player 이동 크기
 
     void Update()
     {

@@ -2,30 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Game1 - Stage2 기침 Generator
 public class Cough2Generator : MonoBehaviour
 {
     public GameObject coughPrefab;
-    public GameObject[] maskPrefabNum;
-    private int[] maskControl = null; // 사람들의 마스크를 제어하기 위해
-    float span = 3.0f;  // 3초마다 기침 생성
-    float delta = 0;
-    private int coughSize;
+    private GameObject[] maskPrefabNum;
+    private int[] maskControl; // 마스크 제어
+    private float span = 3.0f;  // 3초마다 기침 생성
+    private float delta = 0;
+    private int coughSize;  // 기침 수
     private float[] peoplePos = {-2.5f, -0.875f, 0.75f, 2.375f, 4.0f};    // 사람들의 y 위치 좌표
 
     // 기침 효과음
-    AudioSource female_cough;
-    AudioSource male_cough;
+    private AudioSource female_cough;
+    private AudioSource male_cough;
 
-    void Start()
-    {
-
-    }
-
-    // 랜덤한 프리팹 coughSize개 생성
+    // 랜덤한 프리팹 coughSize개 생성 (중복 x)
     int[] getRandomInt(int coughSize, int min, int max)
     {
         int[] randArray = new int[coughSize];
-        bool isSame;
+        bool isSame = false;
 
         for (int i = 0; i < coughSize; i++)
         {
@@ -45,10 +41,10 @@ public class Cough2Generator : MonoBehaviour
                 if (!isSame) break;
             }
         }
-
         return randArray;
     }
 
+    // 사람들 마스크 제어
     void peopleMaskControl(int[] maskControl, int controlSize)
     {
         maskPrefabNum = new GameObject[controlSize];
@@ -56,10 +52,10 @@ public class Cough2Generator : MonoBehaviour
         // 기침하는 사람들의 마스크 내리기, 위치와 y스케일 변경
         for (int i = 0; i < controlSize; i++)
         {
-            maskPrefabNum[i] = GameObject.Find("person" + maskControl[i] + "_mask");
+            maskPrefabNum[i] = GameObject.Find("person" + maskControl[i] + "_mask");    // 어떤 사람의 마스크가 제어되어야 하는지
 
             // 마스크의 위치와 크기를 변경
-            maskPrefabNum[i].transform.Translate(0, -0.1f, 0);
+            maskPrefabNum[i].transform.Translate(0, -0.07f, 0);
             maskPrefabNum[i].transform.localScale = new Vector3(10, 2, 1);
         }
     }
@@ -72,12 +68,12 @@ public class Cough2Generator : MonoBehaviour
 
     void Update()
     {
-        this.delta += Time.deltaTime;
+        delta += Time.deltaTime;
 
         // 3.5초마다 기침 발사
-        if (this.delta > this.span)
+        if (delta > span)
         {
-            this.delta = 0;
+            delta = 0;
 
             playSound("female_cough");  // 주변 여성 기침
             playSound("male_cough");    // 주변 남성 기침
@@ -89,11 +85,12 @@ public class Cough2Generator : MonoBehaviour
                 maskPrefabNum[i].transform.localScale = new Vector3(10, 7, 1);
             }
 
-            // 기침 개수 3 ~ 5 랜덤하게. 최대 5개까지 가능. 한 줄에 사람이 5명이므로
+            // 기침 개수 3 ~ 5 랜덤하게. 최대 5개까지 가능하도록 함.
             coughSize = Random.Range(3, 6);
 
             // 기침 오브젝트 생성
             GameObject[] coughShot = new GameObject[coughSize];
+
             // 사람들의 마스크도 컨트롤하기 위한 배열 생성
             maskControl = new int[coughSize];
 
@@ -108,11 +105,13 @@ public class Cough2Generator : MonoBehaviour
 
             float[] shot = new float[coughSize];     // 랜덤한 위치의 프리팹 coughSize만큼 생성
 
-            // peoplePos[0] ~ peoplePos[4] 의 값이 shot배열에 들어간다
+            // peoplePos[0] ~ peoplePos[4]의 값이 shot배열에 들어간다
             for (int i = 0; i < coughSize; i++)
                 shot[i] = peoplePos[shotArray[i]];
 
-            int rightShot = Random.Range(0, coughSize-1);    // 몇개의 기침이 오른쪽 사람들에게서 발사될 것인지. (모두 오른쪽에서 나오는 기침은 피할 수 없으므로 coughSize-1) 최소 한개는 왼쪽에서 나옴.
+            // 몇개의 기침이 오른쪽 사람들에게서 발사될 것인지
+            // 모두 오른쪽에서 나오는 기침은 피할 수 없으므로 coughSize-1, 최소 한개는 왼쪽에서 나옴.
+            int rightShot = Random.Range(0, coughSize-1);
 
             // 기침 발사
             for (int i = 0; i < coughSize; i++)
@@ -122,7 +121,7 @@ public class Cough2Generator : MonoBehaviour
                 if (i <= rightShot)
                 {
                     coughShot[i].transform.Rotate(0, 0, 180);
-                    coughShot[i].transform.position = new Vector2(8.5f, shot[i]);    // 기침이 발사되는 위치
+                    coughShot[i].transform.position = new Vector2(8.5f, shot[i]);    // 기침의 발사 위치
 
                     // 오른쪽의 사람들 중 어떤 사람의 마스크가 제어되는지 지정
                     if (shot[i] == peoplePos[4]) maskControl[i] = 5;
@@ -134,8 +133,8 @@ public class Cough2Generator : MonoBehaviour
                     continue;
                 }
 
-                // 왼쪽에서 발사되는 기침
-                coughShot[i].transform.position = new Vector2(-8.5f, shot[i]);   // 기침이 발사되는 위치
+                // 왼쪽에서 발사되는 기침의 위치
+                coughShot[i].transform.position = new Vector2(-8.5f, shot[i]);
 
                 // 왼쪽의 사람들 중 어떤 사람의 마스크가 제어되는지 지정
                 if (shot[i] == peoplePos[4]) maskControl[i] = 1;
@@ -148,7 +147,7 @@ public class Cough2Generator : MonoBehaviour
             // 마스크 제어
             peopleMaskControl(maskControl, coughSize);
 
-            Debug.Log("에취!");
+            //Debug.Log("에취!");
         }
     }
 }

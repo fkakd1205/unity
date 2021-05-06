@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Game1 - Stage1의 플레이어 Controller
 public class PlayerController : MonoBehaviour
 {
-    int movePos = 2;
-
-    void Start()
-    {
-    }
+    private int movePos = 2;
 
     void Update()
     {
