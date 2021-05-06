@@ -54,3 +54,5 @@
 
 ## 참고자료
 * .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
+* 화면 동영상 녹화 프로그램 [반디캠](https://www.bandicam.co.kr/), [NCH Debut](https://www.nchsoftware.com/capture/ko/index.html?ns=true&kw=debut%20nch&gclid=Cj0KCQjwp86EBhD7ARIsAFkgakgG6T_mkt5MHqJwhn4quKwErzZ9W6DBj0homwk62rilKFGoXaBuiQ8aArg9EALw_wcB)
+* .mp4파일을 .git로 변환할 수 있는 사이트 [CloudConvert](https://cloudconvert.com/mp4-to-gif)
