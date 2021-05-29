@@ -38,7 +38,7 @@
 <img src="https://user-images.githubusercontent.com/35367660/114121314-1cc03700-9929-11eb-80ce-cdb3ea63d571.gif" width="500">
 <br />
 
-### 3. [Car_Game](./Car_Game)
+### 4. [Car_Game](./Car_Game)
 * [[RedCar]](./Car_Game/RedCar) : 마우스 왼쪽버튼을 눌렀다 떼었을 때, 스와이프 x좌표 길이만큼 Red Car를 동작. Red Car와 Flag의 거리 출력.
 
 <img src="https://user-images.githubusercontent.com/35367660/117256287-74e54d00-ae85-11eb-83ce-2c3a8393fbf1.gif" width="500">
@@ -50,6 +50,24 @@
 4. Text UI - 깃발 회전 횟수(360도 회전), Green Car과 Green Flag의 거리, Red Car과 Red Flag의 거리.
 
 <img src="https://user-images.githubusercontent.com/35367660/117256290-757de380-ae85-11eb-9677-e87bb6bcc1fe.gif" width="500">
+<br />
+
+### 5. [ArrowPrefab](./ArrowPrefab)
+* [[Game1]](./ArrowPrefab/Game1)
+1. Yellow cat : up, down 키 제어로 좌우 이동. player(white cat)와 충돌하면 yellow cat은 왼쪽으로 한걸음 물러나고, player(white cat)는 오른쪽으로 한걸음 물러난다.
+2. Black cat : monster cat으로서 움직이지 않으며, player와 충돌하면 player는 사라진다.
+3. Star1(왼쪽) : 제자리에서 반시계방향으로 회전
+4. Star2(오른쪽) : 게임 시작하면 아래로 떨어지고, 일정 거리 떨어지면 다시 위로 올라가다가 처음 위치에 도달하면 다시 아래로 떨어지는 동작 반복.
+5. hpGage(게이지) : player가 arrow와 충돌하면 게이지 감소
+
+<img src="https://user-images.githubusercontent.com/35367660/120072232-befccf80-c0cd-11eb-91d3-3f3a35e5a071.gif" width="500">
+
+* [[Game2]](./ArrowPrefab/Game2)
+1. Game1에 추가 기능 구현.
+2. Star1 :  프리팹 생성, 4초 마다 한개씩 떨어진다. player와 충돌하면 게이지 리셋시켜 full로 가득 차도록 함.
+3. Text UI : Yellow cat과 player간의 거리를 표시
+
+<img src="https://user-images.githubusercontent.com/35367660/120072231-bd330c00-c0cd-11eb-8d5e-4eccf1b1f51d.gif" width="500">
 <br />
 
 ## 참고자료
