@@ -71,6 +71,15 @@
 <img src="https://user-images.githubusercontent.com/35367660/120072231-bd330c00-c0cd-11eb-8d5e-4eccf1b1f51d.gif" width="500">
 <br />
 
+### 6. [Anima2D](./Anima2D)
+1. Anima2D를 활용해 Skeletal Animation제작
+2. 이미지 분할
+3. Rigging & Skinning (뼈대심기)
+4. 캐릭터 이동 및 점프 구현
+
+<img src="https://user-images.githubusercontent.com/35367660/123211752-d5485080-d4fe-11eb-8161-113c1b61ff00.gif" width="500">
+<br />
+
 ## 참고자료
 * .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
 * 화면 동영상 녹화 프로그램 [반디캠](https://www.bandicam.co.kr/), [NCH Debut](https://www.nchsoftware.com/capture/ko/index.html?ns=true&kw=debut%20nch&gclid=Cj0KCQjwp86EBhD7ARIsAFkgakgG6T_mkt5MHqJwhn4quKwErzZ9W6DBj0homwk62rilKFGoXaBuiQ8aArg9EALw_wcB)
