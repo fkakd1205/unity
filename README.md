@@ -64,8 +64,9 @@
 
 * [[Game2]](./ArrowPrefab/Game2)
 1. Game1에 추가 기능 구현.
-2. Star1 :  프리팹 생성, 4초 마다 한개씩 떨어진다. player와 충돌하면 게이지 리셋시켜 full로 가득 차도록 함.
-3. Text UI : Yellow cat과 player간의 거리를 표시
+2. Star1 : 프리팹 생성, 4초 마다 한개씩 떨어진다. player와 충돌하면 게이지 증가
+3. Star2 : player와 충돌하면 게이지 리셋시켜 full로 가득 차도록 함.
+4. Text UI : Yellow cat과 player간의 거리를 표시
 
 <img src="https://user-images.githubusercontent.com/35367660/120072231-bd330c00-c0cd-11eb-8d5e-4eccf1b1f51d.gif" width="500">
 <br />
