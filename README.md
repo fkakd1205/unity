@@ -80,6 +80,14 @@
 <img src="https://user-images.githubusercontent.com/35367660/123211752-d5485080-d4fe-11eb-8161-113c1b61ff00.gif" width="500">
 <br />
 
+### 7. [3D_Bamsongi](./3D_Bamsongi)
+1. Terrain을 사용해 지형 생성
+2. 마우스 클릭한 한 곳으로 밤송이 날리기 (스크린 좌표를 월드 좌표계로 변경)
+3. 파티클 이펙트 표시 (Particle shape : Sphere)
+
+<img src="https://user-images.githubusercontent.com/35367660/123215782-d29c2a00-d503-11eb-8fa2-03aa52096d06.gif" width="500">
+<br />
+
 ## 참고자료
 * .gitignore 생성 [참고1](https://github.com/github/gitignore/blob/master/Unity.gitignore) (/[Ll]ibrary/, /[Tt]emp/ 등 에서 맨앞의 '/' 을 삭제한다.)
 * 화면 동영상 녹화 프로그램 [반디캠](https://www.bandicam.co.kr/), [NCH Debut](https://www.nchsoftware.com/capture/ko/index.html?ns=true&kw=debut%20nch&gclid=Cj0KCQjwp86EBhD7ARIsAFkgakgG6T_mkt5MHqJwhn4quKwErzZ9W6DBj0homwk62rilKFGoXaBuiQ8aArg9EALw_wcB)
